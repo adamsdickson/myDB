@@ -13,7 +13,7 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp",(err,db)=>{
 
     db.collection('Todos').find({text2:"call Dad"}).count().then((docs)=>{
         console.log(docs);
-    })
-    // db.close();
+    });
+     db.close();
 
 });
