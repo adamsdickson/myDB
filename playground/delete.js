@@ -11,9 +11,12 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp",(err,db)=>{
 
     console.log("connected to database");
 
-    db.collection('Todos').find({text2:"call Dad"}).count().then((docs)=>{
-        console.log(docs);
-    });
-    //  db.close();
+    // db.collection('Todos').deleteOne({text:"Do Nodejs"});
+
+     db.collection("Users").findOneAndDelete({_id:new ObjectID("5c20ded9dd3eba45185e6c12")}).then((k)=>(
+         console.log(k)
+     ));
+
+    // db.close();
 
 });
